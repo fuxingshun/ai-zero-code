@@ -13,4 +13,5 @@ public class HelloController {
     public BaseResponse<String> hello(){
         return ResultUtils.success("Hello, World!");
     }
+
 }
