@@ -41,7 +41,7 @@ const handleSubmit = async (values: any) => {
 </script>
 <template>
   <div id="userRegisterPage">
-    <h2 class="title">AI 应用魔方 - 用户注册</h2>
+    <h2 class="title">AI 零代码应用魔方 - 用户注册</h2>
     <div class="desc">不写一行代码，生成完整应用</div>
     <a-form :model="formState" name="basic" autocomplete="off" @finish="handleSubmit">
       <a-form-item name="userAccount" :rules="[{ required: true, message: '请输入账号' }]">

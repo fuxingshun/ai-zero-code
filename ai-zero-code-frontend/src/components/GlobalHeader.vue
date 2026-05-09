@@ -6,7 +6,7 @@
         <RouterLink to="/">
           <div class="header-left">
             <img class="logo" src="@/assets/logo.png" alt="Logo" />
-            <h1 class="site-title">AI 应用魔方生成</h1>
+            <h1 class="site-title">零代码应用生成</h1>
           </div>
         </RouterLink>
       </a-col>
@@ -144,7 +144,10 @@ const doLogout = async () => {
 .site-title {
   margin: 0;
   font-size: 18px;
-  color: #1890ff;
+  background: linear-gradient(135deg, #00bfff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .ant-menu-horizontal {
