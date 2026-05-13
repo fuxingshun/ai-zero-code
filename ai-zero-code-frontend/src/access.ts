@@ -18,7 +18,7 @@ router.beforeEach(async (to, from, next) => {
     firstFetchLoginUser = false
   }
   const toUrl = to.fullPath
-  if (toUrl.startsWith('/admin')) {
+  if (toUrl.startsWith('/admin')) {Vu
     if (!loginUser || loginUser.userRole !== 'admin') {
       message.error('没有权限')
       next(`/user/login?redirect=${to.fullPath}`)
