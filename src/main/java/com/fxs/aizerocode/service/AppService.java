@@ -1,5 +1,6 @@
 package com.fxs.aizerocode.service;
 
+import com.fxs.aizerocode.model.dto.app.AppAddRequest;
 import com.fxs.aizerocode.model.dto.app.AppQueryRequest;
 import com.fxs.aizerocode.model.entity.ChatHistory;
 import com.fxs.aizerocode.model.entity.User;
@@ -20,6 +21,8 @@ import java.util.List;
  * @since 2026-05-09
  */
 public interface AppService extends IService<App> {
+
+    Long createApp(AppAddRequest appAddRequest, User loginUser);
 
     AppVO getAppVO(App app);
 
