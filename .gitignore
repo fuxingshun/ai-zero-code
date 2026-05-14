@@ -1,4 +1,5 @@
 application-local.yml
+/driver
 /tmp
 HELP.md
 target/
