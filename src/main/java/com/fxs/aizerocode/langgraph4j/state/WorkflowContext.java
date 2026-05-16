@@ -1,5 +1,6 @@
 package com.fxs.aizerocode.langgraph4j.state;
 
+import com.fxs.aizerocode.langgraph4j.model.ImageCollectionPlan;
 import com.fxs.aizerocode.langgraph4j.model.ImageResource;
 import com.fxs.aizerocode.langgraph4j.model.QualityResult;
 import com.fxs.aizerocode.model.enums.CodeGenTypeEnum;
@@ -47,6 +48,19 @@ public class WorkflowContext implements Serializable {
      * 图片资源列表
      */
     private List<ImageResource> imageList;
+    /**
+     * 图片收集计划
+     */
+    private ImageCollectionPlan imageCollectionPlan;
+
+
+    /**
+     * 并发图片收集的中间结果字段
+     */
+    private List<ImageResource> contentImages;
+    private List<ImageResource> illustrations;
+    private List<ImageResource> diagrams;
+    private List<ImageResource> logos;
 
     /**
      * 增强后的提示词
