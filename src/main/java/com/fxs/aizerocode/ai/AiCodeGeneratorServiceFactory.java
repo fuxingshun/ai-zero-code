@@ -1,5 +1,6 @@
 package com.fxs.aizerocode.ai;
 
+import com.fxs.aizerocode.ai.guardrail.PromptSafetyInputGuardrail;
 import com.fxs.aizerocode.ai.tools.*;
 import com.fxs.aizerocode.exception.BusinessException;
 import com.fxs.aizerocode.exception.ErrorCode;
@@ -92,6 +93,7 @@ public class AiCodeGeneratorServiceFactory {
                         .streamingChatModel(reasoningStreamingChatModel)
                         .chatMemoryProvider(memoryId -> chatMemory)
                         .tools(toolManager.getAllTools())
+                        .inputGuardrails(new PromptSafetyInputGuardrail())  // 添加输入护轨
                         .hallucinatedToolNameStrategy(toolExecutionRequest -> ToolExecutionResultMessage.from(
                                 toolExecutionRequest, "Error: there is no tool called " + toolExecutionRequest.name()
                         ))
@@ -103,6 +105,7 @@ public class AiCodeGeneratorServiceFactory {
                 yield AiServices.builder(AiCodeGeneratorService.class)
                         .chatModel(chatModel)
                         .streamingChatModel(openAiStreamingChatModel)
+                        .inputGuardrails(new PromptSafetyInputGuardrail())  // 添加输入护轨
                         .chatMemory(chatMemory)
                         .build();
             }
